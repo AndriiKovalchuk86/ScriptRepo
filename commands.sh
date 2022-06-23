@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo uname -a
+uname -a
 
-echo ps -ef
+ps -ef
 
-echo df -h
+df -h
