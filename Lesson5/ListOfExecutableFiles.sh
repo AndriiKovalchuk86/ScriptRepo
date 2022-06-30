@@ -6,7 +6,7 @@ if [ -f "$file" ]
 then
     if [ -x "$file" ]
     then
-    echo "Executable file $file" >> ExecutableFiles.txt
+    echo "Executable file $file" >> executable.txt
     fi
 fi
 done
