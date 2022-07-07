@@ -1,0 +1,10 @@
+fsfreeze
+sysctl
+ldattach
+cups-browsed
+brltty-setup
+update-secureboot-policy
+vipw
+update-fonts-scale
+remove-default-ispell
+blkid
