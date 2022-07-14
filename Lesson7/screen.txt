@@ -1,0 +1,4 @@
+There are screens on:
+	22196.pts-0.andriy-VirtualBox	(14.07.22 22:22:23)	(Attached)
+	22034.pts-0.andriy-VirtualBox	(14.07.22 22:10:34)	(Detached)
+2 Sockets in /run/screen/S-andriy.
