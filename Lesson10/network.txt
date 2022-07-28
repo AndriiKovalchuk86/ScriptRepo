@@ -13,7 +13,7 @@
    Broadcast address 212.100.54.191
    Subnet mask       255.255.255.192
    
-4. IP                212.100.54.128
+4. IP                212.100.54.192
    Range             212.100.54.193 - 212.100.54.254
    Broadcast address 212.100.54.255
    Subnet mask       255.255.255.192
