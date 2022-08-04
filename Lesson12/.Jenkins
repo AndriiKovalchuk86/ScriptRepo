@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+stages{
+    stage('Build'){
+        agent any
+        steps {
+            git url: 'https://github.com/AndriiKovalchuk86/ScriptRepo.git', branch: 'main'
+        }
+    }
+    stage ('Start apache2') {
+        agent any
+        steps {
+            sh '''#!/bin/bash
+                  sudo systemctl start apache2.service 
+         '''
+        }
+    }
+    stage ('Test'){
+        agent any
+        steps {
+            script {
+            RESULT = sh (script:'if [ $(systemctl is-active apache2.service) = "active" ];then echo "Test OK"; else echo "Test failed"; fi', returnStdout: true).trim()
+            echo RESULT
+            if (RESULT == "Test OK") {
+            currentBuild.result = 'SUCCESS'
+            } else {
+            currentBuild.result = 'FAIL'
+                            }
+            }
+
+            }
+       }
+    stage ('Result'){
+    agent any
+    steps{
+        
+    script {
+        if (currentBuild.result == 'SUCCESS'){
+            echo 'Build is OK.'
+            
+        }
+        else {
+            echo 'Build failed'
+            
+        }
+            }
+        }
+    }
+    }
+}
