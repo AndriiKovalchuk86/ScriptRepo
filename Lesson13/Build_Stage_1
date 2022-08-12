@@ -1,0 +1,30 @@
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
+
+object BuildStage1 : BuildType({
+    name = "Build_Stage_1"
+
+    vcs {
+        root(HttpsGithubComAndriiKovalchuk86ScriptRepoGitRefsHeadsMain)
+    }
+
+    steps {
+        script {
+            scriptContent = "./Lesson5/FileWithDirAttrib.sh"
+        }
+        script {
+            scriptContent = "./Lesson5/ListOfExecutableFiles.sh"
+        }
+        script {
+            scriptContent = "./Lesson5/SortedLogs.sh"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
