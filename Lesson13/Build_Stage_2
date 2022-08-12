@@ -1,0 +1,44 @@
+package _Self.buildTypes
+
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
+
+object BuildStage2 : BuildType({
+    name = "Build_Stage_2"
+
+    artifactRules = "./Lesson6/*.sh => relese_ver_%build.counter%.zip"
+    publishArtifacts = PublishMode.SUCCESSFUL
+
+    vcs {
+        root(AbsoluteId("TeamcityPipeline_HttpsGithubComAndriiKovalchuk86ScriptRepoGitRefsHeadsMain"))
+    }
+
+    steps {
+        script {
+            scriptContent = "./Lesson6/usr_executables.sh"
+        }
+        script {
+            scriptContent = "./Lesson6/cmd_names.sh"
+        }
+        script {
+            scriptContent = "./Lesson6/Find_python.sh"
+        }
+        script {
+            scriptContent = "./Lesson6/descriptors.sh"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    dependencies {
+        snapshot(AbsoluteId("TeamcityPipeline_BuildStage1")) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+            onDependencyCancel = FailureAction.CANCEL
+        }
+    }
+})
