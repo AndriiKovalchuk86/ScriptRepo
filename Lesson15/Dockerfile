@@ -9,10 +9,6 @@ ADD https://github.com/AndriiKovalchuk86/ScriptRepo/blob/main/Lesson12/.Jenkins 
 /test
 RUN apt install -y net-tools
 RUN apt install -y default-jre
-RUN apt install -y awget
-RUN awget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key
-RUN gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
-RUN sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 RUN apt install -y jenkins
 EXPOSE 8080
 ADD https://github.com/AndriiKovalchuk86/ScriptRepo/blob/main/hello_world.sh \
