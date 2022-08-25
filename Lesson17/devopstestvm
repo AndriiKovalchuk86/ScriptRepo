@@ -1,0 +1,42 @@
+{
+    "sku": {
+        "name": "Standard_B1ms",
+        "tier": "Burstable"
+    },
+    "properties": {
+        "fullyQualifiedDomainName": "devopstestvm.postgres.database.azure.com",
+        "version": "13",
+        "minorVersion": "7",
+        "administratorLogin": "devops_test_postgres",
+        "state": "Ready",
+        "availabilityZone": "2",
+        "storage": {
+            "storageSizeGB": 32
+        },
+        "backup": {
+            "backupRetentionDays": 7,
+            "geoRedundantBackup": "Disabled",
+            "earliestRestoreDate": "2022-08-25T18:03:34.2962464+00:00"
+        },
+        "network": {
+            "publicNetworkAccess": "Disabled",
+            "delegatedSubnetResourceId": "/subscriptions/b22b4f12-d0ec-4d5d-879d-dc5b06084b81/resourceGroups/devops_test_rg/providers/Microsoft.Network/virtualNetworks/devops_test_rg-vnet/subnets/default",
+            "privateDnsZoneArmResourceId": "/subscriptions/b22b4f12-d0ec-4d5d-879d-dc5b06084b81/resourceGroups/devops_test_rg/providers/Microsoft.Network/privateDnsZones/devopstestvm.private.postgres.database.azure.com"
+        },
+        "highAvailability": {
+            "mode": "Disabled",
+            "state": "NotEnabled"
+        },
+        "maintenanceWindow": {
+            "customWindow": "Disabled",
+            "dayOfWeek": 0,
+            "startHour": 0,
+            "startMinute": 0
+        }
+    },
+    "location": "West Europe",
+    "tags": {},
+    "id": "/subscriptions/b22b4f12-d0ec-4d5d-879d-dc5b06084b81/resourceGroups/devops_test_rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/devopstestvm",
+    "name": "devopstestvm",
+    "type": "Microsoft.DBforPostgreSQL/flexibleServers"
+}
