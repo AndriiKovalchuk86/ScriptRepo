@@ -42,8 +42,8 @@ resource "azurerm_network_interface_security_group_association" "SGA" {
   network_security_group_id = azurerm_network_security_group.akovalchuk-SG.id
 }
 
-resource "azurerm_windows_virtual_machine" "akovalchuk-win10pro" {
-  name                = "akovalchuk-win10pro"
+resource "azurerm_windows_virtual_machine" "akoval-win10pro" {
+  name                = "akoval-win10pro"
   resource_group_name = azurerm_resource_group.azure-terraform-test.name
   location            = azurerm_resource_group.azure-terraform-test.location
   size                = "Standard_D1_v2"
