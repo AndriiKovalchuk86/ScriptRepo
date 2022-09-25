@@ -13,7 +13,7 @@ resource "azurerm_virtual_network" "akovalchuk-VPC" {
 resource "azurerm_subnet" "akovalchuk-SUBNET" {
   name                 = "internal"
   resource_group_name  = azurerm_resource_group.azure-terraform-test.name
-  virtual_network_name = azurerm_virtual_network.hw20-VPC.name
+  virtual_network_name = azurerm_virtual_network.akovalchuk-VPC.name
   address_prefixes     = ["10.0.128.0/24"]
 }
 
