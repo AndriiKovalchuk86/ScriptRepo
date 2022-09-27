@@ -1,0 +1,103 @@
+[{
+  "_id": 41,
+  "name": "Aleida Elsass",
+  "scores": [
+    {
+      "score": 28.02518041693717,
+      "type": "exam"
+    },
+    {
+      "score": 95.25243105389065,
+      "type": "quiz"
+    },
+    {
+      "score": 68.05980405338909,
+      "type": "homework"
+    }
+  ]
+},{
+  "_id": 50,
+  "name": "Alica Pasley",
+  "scores": [
+    {
+      "score": 19.38544736721771,
+      "type": "exam"
+    },
+    {
+      "score": 88.70752686639557,
+      "type": "quiz"
+    },
+    {
+      "score": 60.62755218680213,
+      "type": "homework"
+    }
+  ]
+},{
+  "_id": 115,
+  "name": "Aurelia Menendez",
+  "scores": [
+    {
+      "score": 5.105728872755167,
+      "type": "exam"
+    },
+    {
+      "score": 7.375913405784407,
+      "type": "quiz"
+    },
+    {
+      "score": 92.62414866541212,
+      "type": "homework"
+    }
+  ]
+},{
+  "_id": 155,
+  "name": "Aleida Elsass",
+  "scores": [
+    {
+      "score": 42.89558347656537,
+      "type": "exam"
+    },
+    {
+      "score": 94.10647660402866,
+      "type": "quiz"
+    },
+    {
+      "score": 30.56402201379193,
+      "type": "homework"
+    }
+  ]
+},{
+  "_id": 164,
+  "name": "Alica Pasley",
+  "scores": [
+    {
+      "score": 41.3852820348269,
+      "type": "exam"
+    },
+    {
+      "score": 87.0183839032626,
+      "type": "quiz"
+    },
+    {
+      "score": 37.22917544696978,
+      "type": "homework"
+    }
+  ]
+},{
+  "_id": 190,
+  "name": "Adrien Renda",
+  "scores": [
+    {
+      "score": 64.16109192679477,
+      "type": "exam"
+    },
+    {
+      "score": 66.93730600935531,
+      "type": "quiz"
+    },
+    {
+      "score": 96.0560340227047,
+      "type": "homework"
+    }
+  ]
+}]
