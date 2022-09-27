@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "507d95d5719dbef170f15bff"
+  },
+  "name": "Phone Service Core Plan",
+  "type": "service",
+  "monthly_price": 60,
+  "rating": 3,
+  "limits": {
+    "voice": {
+      "units": "minutes",
+      "n": 1000,
+      "over_rate": 0.05
+    },
+    "data": {
+      "n": "unlimited",
+      "over_rate": 0
+    },
+    "sms": {
+      "n": "unlimited",
+      "over_rate": 0
+    }
+  },
+  "term_years": 1
+},{
+  "_id": {
+    "$oid": "507d95d5719dbef170f15c00"
+  },
+  "name": "Phone Service Family Plan",
+  "type": "service",
+  "monthly_price": 90,
+  "rating": 4,
+  "limits": {
+    "voice": {
+      "units": "minutes",
+      "n": 1200,
+      "over_rate": 0.05
+    },
+    "data": {
+      "n": "unlimited",
+      "over_rate": 0
+    },
+    "sms": {
+      "n": "unlimited",
+      "over_rate": 0
+    }
+  },
+  "sales_tax": true,
+  "term_years": 2
+},{
+  "_id": {
+    "$oid": "507d95d5719dbef170f15bfe"
+  },
+  "name": "Phone Service Basic Plan",
+  "type": "service",
+  "monthly_price": 40,
+  "rating": 3,
+  "limits": {
+    "voice": {
+      "units": "minutes",
+      "n": 400,
+      "over_rate": 0.05
+    },
+    "data": {
+      "units": "gigabytes",
+      "n": 20,
+      "over_rate": 1
+    },
+    "sms": {
+      "units": "texts sent",
+      "n": 100,
+      "over_rate": 0.001
+    }
+  },
+  "term_years": 2
+}]
