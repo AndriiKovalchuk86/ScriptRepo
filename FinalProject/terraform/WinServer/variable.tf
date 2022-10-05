@@ -9,6 +9,6 @@ variable "resource_group_name" {
 }
 
 variable "firerwall_ip" {
-  default = "3.120.117.202"
+  default = "20.224.73.13"
   description = "azurerm_mysql_firewall_rule"  
 }
