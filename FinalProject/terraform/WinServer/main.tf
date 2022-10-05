@@ -31,7 +31,7 @@ resource "azurerm_mysql_database" "kovdb" {
 
 resource "azurerm_mysql_firewall_rule" "dbrule" {
   name                = "dbfiewallrule"
-  resource_group_name = azurerm_resource_group.kir-terraform.name
+  resource_group_name = azurerm_resource_group.kov-terraform.name
   server_name         = azurerm_mysql_server.kovmysql.name
   start_ip_address    = var.firerwall_ip
   end_ip_address      = var.firerwall_ip
