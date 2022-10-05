@@ -95,7 +95,7 @@ resource "azurerm_network_interface_security_group_association" "example" {
 }
 
 resource "azurerm_windows_virtual_machine" "kov-terraform" {
-  name                = "Terraform-WinServer"
+  name                = "Ter-WinServer"
   location            = azurerm_resource_group.kov-terraform.location
   resource_group_name = azurerm_resource_group.kov-terraform.name
   size                = "Standard_DS1_v2"
