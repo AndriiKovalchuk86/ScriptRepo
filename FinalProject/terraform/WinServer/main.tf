@@ -2,7 +2,7 @@ resource "azurerm_resource_group" "kov-terraform" {
   name     = var.resource_group_name
   location = var.resource_group_location
 }
-#--------------------------------
+
 resource "azurerm_mysql_server" "kovmysql" {
   name                = "kov-mysqlserver"
   location            = azurerm_resource_group.kov-terraform.location
@@ -19,6 +19,7 @@ resource "azurerm_mysql_server" "kovmysql" {
   geo_redundant_backup_enabled = false
   ssl_enforcement_enabled      = true
 }
+
 resource "azurerm_mysql_database" "kovdb" {
   name                = "akovaldb"
   resource_group_name = azurerm_resource_group.kov-terraform.name
@@ -27,6 +28,7 @@ resource "azurerm_mysql_database" "kovdb" {
   collation           = "utf8_unicode_ci"
   
 }
+
 resource "azurerm_mysql_firewall_rule" "dbrule" {
   name                = "dbfiewallrule"
   resource_group_name = azurerm_resource_group.kir-terraform.name
@@ -34,7 +36,7 @@ resource "azurerm_mysql_firewall_rule" "dbrule" {
   start_ip_address    = var.firerwall_ip
   end_ip_address      = var.firerwall_ip
 }
-#--------------------------------
+
 resource "azurerm_virtual_network" "terraform-network" {
   name                = "terraform-network"
   address_space       = ["10.0.0.0/16"]
@@ -49,7 +51,6 @@ resource "azurerm_subnet" "terraform-subnet" {
   address_prefixes     = ["10.0.128.0/24"]
 }
 
-# Create public IPs
 resource "azurerm_public_ip" "kov-terraform-ip" {
   name                = "TerraformPublicIP"
   location            = azurerm_resource_group.kov-terraform.location
@@ -57,7 +58,6 @@ resource "azurerm_public_ip" "kov-terraform-ip" {
   allocation_method   = "Dynamic"
 }
 
-# Create Network Security Group and rule
 resource "azurerm_network_security_group" "kov-terraform-nsg" {
   name                = "TerraformNetworkSecurityGroup"
   location            = azurerm_resource_group.kov-terraform.location
@@ -76,7 +76,6 @@ resource "azurerm_network_security_group" "kov-terraform-nsg" {
   }
 }
 
-# Create network interface
 resource "azurerm_network_interface" "kov-terraform-nic" {
   name                = "TerraformNIC"
   location            = azurerm_resource_group.kov-terraform.location
@@ -90,7 +89,6 @@ resource "azurerm_network_interface" "kov-terraform-nic" {
   }
 }
 
-# Connect the security group to the network interface
 resource "azurerm_network_interface_security_group_association" "example" {
   network_interface_id      = azurerm_network_interface.kov-terraform-nic.id
   network_security_group_id = azurerm_network_security_group.kov-terraform-nsg.id
