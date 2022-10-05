@@ -4,7 +4,7 @@ variable "resource_group_location" {
 }
 
 variable "resource_group_name" {
-  default     = "kir-serv-test-terraform"
+  default     = "kov-serv-test-terraform"
   description = "Resourse group name"
 }
 
