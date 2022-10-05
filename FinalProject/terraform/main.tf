@@ -47,11 +47,11 @@ resource "tls_private_key" "example_ssh" {
   rsa_bits  = 4096
 }
 
-resource "azurerm_windows_virtual_machine" "akoval-win10pro" {
+resource "azurerm_linux_virtual_machine" "akoval-ubuntu" {
   name                = "akoval-ubuntu"
   resource_group_name = azurerm_resource_group.azure-terraform-test.name
   location            = azurerm_resource_group.azure-terraform-test.location
-  size                = "Standard_D1_v2"
+  size                = "Standard_DS1_v2"
   admin_username      = "akovalchuk"
   disable_password_authentication = true
   
