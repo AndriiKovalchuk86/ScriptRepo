@@ -1,3 +1,6 @@
  private key: id_rsa
  user: akovalchuk
  ip: 20.224.73.13
+ 
+ to get key:
+ terraform output -raw tls_private_key > id_rsa
