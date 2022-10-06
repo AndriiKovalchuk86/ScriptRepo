@@ -8,7 +8,7 @@ pipeline {
        
        stage ('Build') {
             steps {
-                git url: 'https://github.com/AndriiKovalchuk86/ScriptRepo.git', branch: 'main'
+                git url: 'https://github.com/AndriiKovalchuk86/ScriptRepo/FinalProject/terraform/Ubuntu2004', branch: 'main'
             }
         }
         stage ('login azure') {
@@ -19,6 +19,11 @@ pipeline {
          stage ('terraform init') {
             steps {
                 sh 'terraform init'
+            }
+        }
+        stage ('terraform validate') {
+            steps {
+                sh 'terraform validate'
             }
         }
         stage ('terraform apply') {
