@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    tools {
+        terraform 'terraform'
+    }
+
+    stages {
+       
+       stage ('Build') {
+            steps {
+                git url: 'https://github.com/AndriiKovalchuk86/ScriptRepo.git', branch: 'main'
+            }
+        }
+        stage ('login azure') {
+            steps {
+               sh 'az login'
+            }
+        }
+         stage ('terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage ('terraform apply') {
+            steps {
+                sh 'terraform apply --auto-approve'
+            }
+        }
+    }
+}
