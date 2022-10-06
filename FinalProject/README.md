@@ -1,1 +1,1 @@
-Project is not ready yet, estimated date 05.10.2022
+This folder contain all resources for Final project
